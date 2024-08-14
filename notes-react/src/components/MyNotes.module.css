@@ -1,0 +1,94 @@
+:root{
+    --dark-blue:#001F8B;
+    --color-fill:#000;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    /* position: relative; */
+   overflow-y: auto;
+    background-color: #DAE5F5;
+
+}
+.header{
+    background-color: var(--dark-blue);
+    height: 10%;
+    width:100%;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+}
+.groupName{
+    color: white;
+    font-size: 1.6em;
+    margin: 1%;
+    
+}
+.body{
+    margin-top: 10%;
+    margin-bottom: 20%;
+    
+
+}
+.noteBox{
+   
+   margin: 1.5% 3%;
+    background-color: white;
+    box-shadow: 0px 4px 20px 0px #00000040;
+    border-radius: 5px;
+    padding: 1.5em;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    line-height: 1.4em;
+    
+}
+.footer{
+    background-color: var(--dark-blue);
+    height: 25%;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    
+    /* text-align: center; */
+}
+.enterNotes{
+    width: 65rem;
+    height: 80%;
+    margin: 1rem 1rem;
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    resize: none;
+}
+.enterNotes::placeholder{
+    font-size: 1.2rem;
+}
+.saveButton{
+    fill: var(--color-fill);
+    width: 30px;
+    border: 2px solid red;
+    z-index: 2;
+}
+.saveButton2{
+    fill: var(--color-fill);
+    border: 2px solid rgb(0, 255, 98);
+}
+.logo{
+    background-color:#ABABAB;
+    background-color: #001F8B;
+    -webkit-mask: url(../assets/saveButton.svg) no-repeat center;
+    mask: url(../assets/saveButton.svg) no-repeat center;
+    height:50px;
+    width: 1.9rem;
+    z-index: 2;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    cursor: pointer;
+}
