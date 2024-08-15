@@ -9,14 +9,8 @@ import "./color.css";
 
 export default function NotesList({group, setGroup,setCurrentGroup,colorClass, setColorClass,groupName, setGroupName,getShortForm}) {
   const [isOpen, setIsOpen] = useState(false);
-  // const [colorClass, setColorClass] = useState();
-  // const [group, setGroup] = useState([]);
-  // const [groupName, setGroupName] = useState("");
   const popupRef = useRef();
-
-  // const getShortForm = (key) => {
-  //   key.match(/\b\w/g).join("").slice(0, 2).toUpperCase();
-  // };
+  const [activeGroup,setActiveGroup]=useState(null)
 
   const handleAddGroup = () => {
     if (!groupName.trim() ) {
@@ -28,11 +22,10 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
 
     setGroupName("");
   };
-  // const changeMyNote=(text)=>{
-  //   setCurrentGroup([text[0],text[1]])
-  // }
+ 
   
   const navigate=useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -46,8 +39,13 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
             key={index}
             className={styles.groupp}
             onClick={() => {
-              setCurrentGroup([text[0], text[1]])
-              navigate('/created')
+              setCurrentGroup([text[0], text[1]]);
+
+              navigate('/created');
+              setActiveGroup(index);
+            }}
+            style={{
+              background:activeGroup===index&&'#2F2F2F2B'
             }}
           >
             <div className={styles.iconSpace}>

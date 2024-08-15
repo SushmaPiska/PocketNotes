@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 .groupp:hover{
-  background-color: #2F2F2F2B;
+  background-color: #7675750e;
 }
 
 .iconSpace{
@@ -48,6 +48,7 @@
     flex: 1;
     font-size: 1.5em;
 }
+
 
 .addButton{
     background-color: #16008B;
