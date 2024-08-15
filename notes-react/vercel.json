@@ -1,5 +1,5 @@
 {
     "routes":[
-        {"sources":"/(.*)", "destination":"/"}
+        {"source":"/(.*)", "destination":"/"}
     ]
 }
