@@ -9,6 +9,7 @@ import { AppContext, AppProvider } from "./context/AppContext";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 function App() {
   const { group, setGroup } = useContext(AppContext);
@@ -18,7 +19,7 @@ function App() {
   const [currentGroup, setCurrentGroup] = useState([null, null]);
   const [groupName, setGroupName] = useState("");
 
-  // const navigate = useNavigate();
+  
 
   const getShortForm = (key) => {
     const shortForm = key?.match(/\b\w/g).join("").slice(0, 2).toUpperCase();
@@ -33,6 +34,7 @@ function App() {
     <>
       <AppProvider>
         <BrowserRouter>
+         
           <div className={styles.container}>
             <div className={styles.left}>
               <NotesList
@@ -63,6 +65,7 @@ function App() {
                   }
                 ></Route>
                 <Route path="*" element={<Navigate to="/" />}></Route>
+                {/* <Redirect to='/'/> */}
               </Routes>
             </div>
           </div>{" "}

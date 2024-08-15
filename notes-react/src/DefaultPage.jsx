@@ -7,9 +7,9 @@ export default function DefaultPage() {
   return (
     <div className={styles.container}>
       <div className={styles.body}>
-        <img src={bgImage} />
-        <h1>Pocket Notes</h1>
-        <p>
+        <img src={bgImage} className={styles.image}/>
+        <h1 className={styles.heading}>Pocket Notes</h1>
+        <p className={styles.bodyText}>
           Send and receive messages without keeping your phone online. Use
           Pocket Notes on up to 4 linked devices and 1 mobile phone
         </p>
