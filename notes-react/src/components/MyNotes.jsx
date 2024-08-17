@@ -8,9 +8,14 @@ export default function MyNotes({ currentGroup, getShortForm }) {
   // const [notes,setNotes]=useState([])
   const { notes, setNotes } = useContext(AppContext);
   // const[note,setNote]=useState(notes[currentGroup[1]])
+  const[isEmpty,setIsEmpty]=useState(true);
 
   const handleInputChange = (e) => {
-    setInputNote(e.target.value);
+    const text=e.target.value;
+    setInputNote(text);
+    console.log(inputNote);
+    setIsEmpty(text.length===0);
+    // (inputNote?setIsEmpty(false):setIsEmpty(true))
   };
   const addNote = (key, note) => {
     setNotes((prevNotes) => ({
@@ -65,7 +70,7 @@ export default function MyNotes({ currentGroup, getShortForm }) {
           value={inputNote}
           onChange={handleInputChange}
         ></textarea>
-        <div className={styles.logo} onClick={handleAddNote}>
+        <div className={isEmpty?styles.logo+" "+styles.emptyColor:styles.logo+" "+styles.fillColor} onClick={handleAddNote}>
           -
         </div>
       </div>
