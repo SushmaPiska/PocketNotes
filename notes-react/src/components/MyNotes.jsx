@@ -32,6 +32,7 @@ export default function MyNotes({ currentGroup, getShortForm }) {
     // setNote(prevNote=>[...prevNote,inputNote])
     // handleAddNotes(currentGroup[1],note);
     setInputNote("");
+    setIsEmpty(true)
   };
 
   return (
