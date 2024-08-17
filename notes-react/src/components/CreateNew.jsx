@@ -15,9 +15,12 @@ export default function CreateNew({closePopup,colorClass,setColorClass,groupName
     const navigate=useNavigate();
 
     const createHandler = () => {
-      closePopup(); 
-      navigate('/created');
       handleAddGroup();
+      
+      navigate('/created',{replace:true});
+      closePopup();
+      setColorClass("") 
+      setGroupName("")
       // setGroup([colorClass,groupName])
   };
     
@@ -36,6 +39,7 @@ export default function CreateNew({closePopup,colorClass,setColorClass,groupName
         <h3 className={styles.groupLeft}>Group Name</h3>
         <input
           type="text"
+          value={groupName}
           className={styles.groupInput}
           placeholder="Enter group name"
           onChange={handleInputChange}
@@ -44,12 +48,18 @@ export default function CreateNew({closePopup,colorClass,setColorClass,groupName
       <div className={styles.colorChoice}>
         <h3 className={styles.colorText}>Choose colour</h3>
         <div className={styles.colorBalls}>
-          <div value="voilet" className={styles.voilet + " " + styles.color} onClick={(e)=>handleColor(e)}></div>
-          <div value="pink" className={styles.pink + " " + styles.color} onClick={(e)=>handleColor(e)}></div>
-          <div value="skyBlue" className={styles.skyBlue + " " + styles.color} onClick={(e)=>handleColor(e)}></div>
-          <div value="brown" className={styles.brown + " " + styles.color} onClick={(e)=>handleColor(e)}></div>
-          <div value="darkBlue" className={styles.darkBlue + " " + styles.color} onClick={(e)=>handleColor(e)}></div>
-          <div value="blue" className={styles.blue + " " + styles.color} onClick={(e)=>handleColor(e)}></div>
+          <div value="voilet" className={`${styles.color} ${styles.voilet} ${colorClass === 'voilet' ? styles.selected : ''}`}
+          //   className={
+          //   colorClass==="voilet"?styles.voilet + " " + styles.color+" "+styles.selected:styles.voilet + " " + styles.color
+          // }
+           onClick={(e)=>handleColor(e)}></div>
+          <div value="pink" className={`${styles.color} ${styles.pink} ${colorClass === 'pink' ? styles.selected : ''}`} onClick={(e)=>handleColor(e)}></div>
+
+          <div value="skyBlue" className={`${styles.color} ${styles.skyBlue} ${colorClass === 'skyBlue' ? styles.selected : ''}`} onClick={(e)=>handleColor(e)}></div>
+
+          <div value="brown" className={`${styles.color} ${styles.brown} ${colorClass === 'brown' ? styles.selected : ''}`} onClick={(e)=>handleColor(e)}></div>
+          <div value="darkBlue" className={`${styles.color} ${styles.darkBlue} ${colorClass === 'darkBlue' ? styles.selected : ''}`} onClick={(e)=>handleColor(e)}></div>
+          <div value="blue" className={`${styles.color} ${styles.blue} ${colorClass === 'blue' ? styles.selected : ''}`} onClick={(e)=>handleColor(e)}></div>
         </div>
       </div>
       
@@ -58,3 +68,4 @@ export default function CreateNew({closePopup,colorClass,setColorClass,groupName
     </div>
   );
 }
+//////////
