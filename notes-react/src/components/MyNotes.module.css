@@ -80,8 +80,8 @@
     border: 2px solid rgb(0, 255, 98);
 }
 .logo{
-    background-color:#ABABAB;
-    background-color: #001F8B;
+    /* background-color:#ABABAB; */
+    /* background-color: #001F8B; */
     -webkit-mask: url(../assets/saveButton.svg) no-repeat center;
     mask: url(../assets/saveButton.svg) no-repeat center;
     height:50px;
@@ -92,3 +92,10 @@
     right: 40px;
     cursor: pointer;
 }
+.emptyColor{
+    background-color:#ABABAB;
+}
+.fillColor{
+    background-color: #001F8B;
+}
+

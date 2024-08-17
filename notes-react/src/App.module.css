@@ -19,3 +19,8 @@
 .right{
     flex: 1;
 }
+@container(max-width:360px){
+    .left{
+        width: 100%;
+    }
+}

@@ -13,7 +13,7 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
   const [activeGroup,setActiveGroup]=useState(null)
 
   const handleAddGroup = () => {
-    if (!groupName.trim() ) {
+    if (!groupName.trim() || !colorClass) {
       console.log("input something");
       return;
     }
@@ -21,10 +21,14 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
     setGroup((prevGroup) => [...prevGroup, [colorClass,groupName]]);
 
     setGroupName("");
+    // closePopup();
   };
  
   
   const navigate=useNavigate();
+
+  const openPopup=()=>setIsOpen(true);
+  const closePopup=()=>setIsOpen(false);
 
   return (
     <div className={styles.container}>
@@ -32,7 +36,7 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
         <h1 >Pocket Notes</h1>
       </div>
 
-      <div  className={styles.body}>
+      <div className={styles.body}>
                  
       {group.map((text, index) => (
           <div
@@ -61,7 +65,7 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
       <Popup
         contentStyle={{ width: "45%" }}
         trigger={
-          <div className={styles.addButton} onClick={() => setIsOpen(true)}>
+          <div className={styles.addButton} onClick={openPopup}>
             +
           </div>
         }
@@ -72,7 +76,7 @@ export default function NotesList({group, setGroup,setCurrentGroup,colorClass, s
         ref={popupRef}
       >
         <CreateNew
-          closePopup={() => setIsOpen(false)} 
+          closePopup={closePopup} 
           colorClass={colorClass}
           setColorClass={setColorClass}
           groupName={groupName}
