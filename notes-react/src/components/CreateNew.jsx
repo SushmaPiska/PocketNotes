@@ -15,10 +15,11 @@ export default function CreateNew({closePopup,colorClass,setColorClass,groupName
     const navigate=useNavigate();
 
     const createHandler = () => {
+      closePopup();
       handleAddGroup();
       
       navigate('/created',{replace:true});
-      closePopup();
+      
       setColorClass("") 
       setGroupName("")
       // setGroup([colorClass,groupName])

@@ -79,3 +79,13 @@
     margin-right: 1rem;
     cursor: pointer;
 }
+@media(max-width:360px){
+    
+    .heading{
+        font-size: 1.1em;
+        margin: 0.2em;
+    }
+    .groupLeft,.colorText{
+
+    }
+}

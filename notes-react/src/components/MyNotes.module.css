@@ -98,4 +98,9 @@
 .fillColor{
     background-color: #001F8B;
 }
+@media(max-width:360px){
+    /* .logo{
+        display: none;
+    } */
+}
 
